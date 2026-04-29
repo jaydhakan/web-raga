@@ -391,6 +391,16 @@ export const travelPackages: TravelPackage[] = [
         inclusions: ['Superior hotels', 'Private airport transfers', 'Safari World or Dream World option', 'Coral Island tour'],
         exclusions: commonExclusions,
       }),
+      createVariant({
+        variantName: 'Luxury',
+        duration: '6 nights / 7 days',
+        priceLabel: 'From INR 94,999 per person',
+        actualPrice: 108999,
+        discountedPrice: 94999,
+        hotelCategory: '5-star hotels',
+        inclusions: ['5-star hotel stays', 'Private transfers throughout', 'Rooftop dinner experience', 'Coral Island private tour', 'Bangkok night cruise'],
+        exclusions: commonExclusions,
+      }),
     ],
   },
   {
