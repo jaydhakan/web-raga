@@ -1,42 +1,94 @@
-import { MapPin } from 'lucide-react';
+import { MessageCircle, MapPin, Sparkles } from 'lucide-react';
 import type { TravelPackage } from '@/types/package';
 import { Button } from '@/components/common/Button';
-import { getStartingVariant } from '@/utils/packageUtils';
+import {
+  getBestSellingVariant,
+  getDurationRange,
+  getLowestPriceVariant,
+  getPackageWhatsAppUrl,
+} from '@/utils/packageUtils';
 
 type PackageCardProps = {
   item: TravelPackage;
 };
 
 export function PackageCard({ item }: PackageCardProps) {
-  const startingVariant = getStartingVariant(item);
+  const lowestVariant = getLowestPriceVariant(item);
+  const bestSellingVariant = getBestSellingVariant(item);
+  const durationRange = getDurationRange(item);
+  const whatsappUrl = getPackageWhatsAppUrl(item);
 
   return (
-    <article className="group overflow-hidden rounded-brand border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
-      <div className="aspect-[4/3] overflow-hidden bg-raga-sand">
+    <article className="group flex h-full flex-col overflow-hidden rounded-brand border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
+      <div className="relative aspect-[4/3] overflow-hidden bg-raga-sand">
         <img
           src={item.heroImage}
           alt={item.title}
           className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
           loading="lazy"
         />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-raga-ink/72 to-transparent" />
+        <div className="absolute left-4 top-4 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-raga-pine shadow-card">
+          {item.packageType}
+        </div>
+        <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-raga-gold px-3 py-1.5 text-[0.68rem] font-bold text-raga-ink shadow-card">
+          <Sparkles size={13} aria-hidden="true" />
+          Best seller: {bestSellingVariant.variantName}
+        </div>
       </div>
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <div className="mb-4 flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-raga-rust">
           <MapPin size={14} aria-hidden="true" />
-          {item.destination}
+          {item.destination}, {item.country}
         </div>
         <h3 className="font-display text-3xl font-semibold leading-[1.02]">{item.title}</h3>
         <p className="mt-4 text-sm leading-7 text-raga-ink/68">{item.shortDescription}</p>
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-raga-ink/10 pt-5">
-          <div>
+
+        <ul className="mt-5 grid gap-2 text-sm font-semibold leading-6 text-raga-ink/72">
+          {item.highlights.slice(0, 3).map((highlight) => (
+            <li key={highlight} className="flex gap-2">
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-raga-gold" />
+              {highlight}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-auto pt-6">
+          <div className="rounded-brand border border-raga-ink/8 bg-white/70 p-4">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-raga-ink/45">
-              {startingVariant.duration}
+              Duration
             </p>
-            <p className="mt-1 font-bold text-raga-pine">{startingVariant.priceLabel}</p>
+            <p className="mt-1 text-sm font-bold text-raga-ink">{durationRange}</p>
+            <p className="mt-4 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-raga-ink/45">
+              Starting from
+            </p>
+            <p className="mt-1 text-lg font-extrabold text-raga-pine">{lowestVariant.priceLabel}</p>
           </div>
-          <Button href={`/packages/${item.slug}`} variant="secondary">
-            View
+        </div>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <Button href={`/packages/${item.slug}`} variant="secondary" className="w-full">
+            View Details
           </Button>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-raga-pine px-5 py-3 text-sm font-bold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-ink hover:shadow-lifted"
+          >
+            <MessageCircle className="mr-2" size={17} aria-hidden="true" />
+            Enquire
+          </a>
+        </div>
+        <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-raga-ink/10 pt-4">
+          {item.variants.map((variant) => (
+            <span
+              key={variant.variantName}
+              className="rounded-full border border-raga-ink/10 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-raga-ink/55"
+            >
+              {variant.variantName}
+            </span>
+          ))}
         </div>
       </div>
     </article>
