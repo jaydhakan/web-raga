@@ -7,7 +7,7 @@ export function FeaturedPackages() {
   const featuredPackages = getFeaturedPackages();
 
   return (
-    <section className="py-20">
+    <section className="py-24">
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
@@ -16,7 +16,7 @@ export function FeaturedPackages() {
             description="Static package data for v1, shaped so a CMS or API can later provide the same contract."
           />
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-7 md:grid-cols-3">
           {featuredPackages.map((item) => (
             <PackageCard key={item.id} item={item} />
           ))}

@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 :root {
-  color: #17201b;
-  background: #f7f1e6;
+  color: #141a17;
+  background: #f7f2e9;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,10 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+  background:
+    radial-gradient(circle at top left, rgba(197, 154, 80, 0.12), transparent 28rem),
+    linear-gradient(180deg, #fffaf1 0%, #f7f2e9 38%, #efe2cf 100%);
 }
 
 a {
@@ -35,6 +39,6 @@ img {
 }
 
 ::selection {
-  color: #f7f1e6;
-  background: #1f4d3a;
+  color: #fffaf1;
+  background: #173c33;
 }

@@ -4,14 +4,14 @@ export function PackageFilters() {
   const categories = getPackageCategories();
 
   return (
-    <div className="flex flex-wrap gap-3 rounded-lg border border-raga-ink/10 bg-white p-4">
-      <button className="rounded-full bg-raga-pine px-4 py-2 text-sm font-semibold text-white" type="button">
+    <div className="flex flex-wrap gap-3 rounded-brand border border-raga-ink/10 bg-raga-ivory/90 p-4 shadow-card">
+      <button className="rounded-full bg-raga-pine px-5 py-2.5 text-sm font-bold text-raga-ivory shadow-sm" type="button">
         All
       </button>
       {categories.map((category) => (
         <button
           key={category}
-          className="rounded-full border border-raga-ink/15 px-4 py-2 text-sm font-semibold text-raga-ink/70 transition hover:border-raga-pine hover:text-raga-pine"
+          className="rounded-full border border-raga-ink/12 bg-white/70 px-5 py-2.5 text-sm font-bold text-raga-ink/66 transition hover:border-raga-gold hover:text-raga-pine"
           type="button"
         >
           {category}

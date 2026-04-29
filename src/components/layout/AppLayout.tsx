@@ -6,7 +6,7 @@ export function AppLayout() {
   return (
     <div className="min-h-screen bg-raga-linen text-raga-ink">
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <Outlet />
       </main>
       <Footer />
