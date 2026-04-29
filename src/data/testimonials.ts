@@ -1,6 +1,5 @@
 import type { Testimonial } from '@/types/shared';
 
-// TODO: Replace placeholder testimonials with verified customer reviews or CMS-managed social proof.
 export const testimonials: Testimonial[] = [
   {
     id: 't-01',

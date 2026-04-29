@@ -1,6 +1,5 @@
 import type { FAQ } from '@/types/shared';
 
-// TODO: Move FAQs into CMS/API when support and booking policies become editable by the travel team.
 export const faqs: FAQ[] = [
   {
     id: 'faq-01',

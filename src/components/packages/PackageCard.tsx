@@ -1,4 +1,5 @@
 import { MessageCircle, MapPin, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import type { TravelPackage } from '@/types/package';
 import { Button } from '@/components/common/Button';
 import {
@@ -19,7 +20,8 @@ export function PackageCard({ item }: PackageCardProps) {
   const whatsappUrl = getPackageWhatsAppUrl(item);
 
   return (
-    <article className="premium-card group flex h-full flex-col overflow-hidden">
+    // `relative` establishes the stacking context for the stretched link overlay
+    <article className="premium-card group relative flex h-full cursor-pointer flex-col overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden bg-raga-sand">
         <img
           src={item.heroImage}
@@ -43,7 +45,20 @@ export function PackageCard({ item }: PackageCardProps) {
           <MapPin size={14} aria-hidden="true" />
           {item.destination}, {item.country}
         </div>
-        <h3 className="font-display text-3xl font-semibold leading-tight">{item.title}</h3>
+        {/*
+          Stretched-link pattern: the ::after pseudo-element on this <Link> expands to cover
+          the entire card (position: absolute; inset: 0). All interactive elements below use
+          `relative z-10` to sit above it — no stopPropagation needed.
+        */}
+        <h3 className="font-display text-3xl font-semibold leading-tight">
+          <Link
+            to={`/packages/${item.slug}`}
+            className="focus-ring rounded-sm after:absolute after:inset-0 after:z-0 after:content-['']"
+            aria-label={`View ${item.title} package details`}
+          >
+            {item.title}
+          </Link>
+        </h3>
         <p className="mt-4 text-sm leading-7 text-raga-ink/68">{item.shortDescription}</p>
 
         <ul className="mt-5 grid gap-2 text-sm font-semibold leading-6 text-raga-ink/72">
@@ -71,7 +86,8 @@ export function PackageCard({ item }: PackageCardProps) {
           </div>
         </div>
 
-        <div className="mt-5 grid items-stretch gap-3 sm:grid-cols-2">
+        {/* relative z-10 lifts both buttons above the stretched-link overlay */}
+        <div className="relative z-10 mt-5 grid items-stretch gap-3 sm:grid-cols-2">
           <Button href={`/packages/${item.slug}`} variant="secondary" className="w-full">
             Check Availability
           </Button>
@@ -85,10 +101,10 @@ export function PackageCard({ item }: PackageCardProps) {
             Get Best Price
           </a>
         </div>
-        <p className="mt-3 text-center text-xs font-bold text-raga-ink/48">
+        <p className="relative z-10 mt-3 text-center text-xs font-bold text-raga-ink/48">
           Free WhatsApp consultation. No hidden charges in final quote.
         </p>
-        <div className="mt-4 flex shrink-0 flex-wrap items-center gap-2 border-t border-raga-ink/10 pt-4">
+        <div className="relative z-10 mt-4 flex shrink-0 flex-wrap items-center gap-2 border-t border-raga-ink/10 pt-4">
           {item.variants.map((variant) => (
             <span
               key={variant.variantName}

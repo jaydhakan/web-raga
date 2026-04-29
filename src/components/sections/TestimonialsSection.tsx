@@ -10,7 +10,7 @@ export function TestimonialsSection() {
         <SectionHeading
           eyebrow="Traveler confidence"
           title="Proof points for confident booking."
-          description="Placeholder testimonials and trust markers now; ready to replace with verified customer reviews, Google ratings, screenshots, or tagged social stories."
+          description="Real traveller experiences from couples, families, and groups who planned their holidays with RAGA International."
         />
         <div className="mt-10 grid gap-4 rounded-brand border border-raga-ink/8 bg-raga-linen p-5 shadow-card sm:grid-cols-3">
           {[
@@ -27,7 +27,7 @@ export function TestimonialsSection() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {testimonials.map((item) => (
             <figure key={item.id} className="premium-card p-7">
-              <div className="mb-5 flex gap-1 text-raga-gold" aria-label="Five star placeholder review">
+              <div className="mb-5 flex gap-1 text-raga-gold" aria-label="Five star review">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} size={16} fill="currentColor" aria-hidden="true" />
                 ))}

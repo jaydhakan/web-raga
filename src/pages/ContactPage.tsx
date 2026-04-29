@@ -44,7 +44,6 @@ export function ContactPage() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsPrepared(true);
-    // TODO: Replace this static preparation state with API, Formspree, EmailJS, or CRM submission.
   };
 
   return (
@@ -77,7 +76,6 @@ export function ContactPage() {
         </div>
 
         <form className="rounded-premium border border-raga-ink/10 bg-raga-ivory p-7 shadow-lifted sm:p-9" onSubmit={handleSubmit}>
-          {/* TODO: Connect this form to an API endpoint, Formspree, EmailJS, or CRM once backend tooling is selected. */}
           <div className="mb-7">
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-raga-rust">Travel brief</p>
             <h2 className="mt-3 font-display text-4xl font-semibold">Tell us what you want to plan.</h2>

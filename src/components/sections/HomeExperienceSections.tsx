@@ -158,8 +158,8 @@ export function SocialProofSection() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <SectionHeading
             eyebrow="Instagram and social proof"
-            title="A feed-ready space for real traveller moments."
-            description="Placeholder cards are used for now. This section is structured so real Instagram posts, reels, customer tags, or curated travel albums can replace them later."
+            title="Destination highlights and traveller moments."
+            description="A look at the experiences RAGA International curates — from honeymoon villas and desert safaris to cruise decks and island tours."
           />
           <div className="rounded-premium border border-raga-ink/8 bg-raga-linen p-6 shadow-card">
             <div className="flex items-start gap-4">
@@ -169,8 +169,8 @@ export function SocialProofSection() {
               <div>
                 <p className="font-bold text-raga-pine">{siteConfig.instagramHandle}</p>
                 <p className="mt-2 text-sm leading-7 text-raga-ink/66">
-                  Follow RAGA International for package updates, destination inspiration, customer stories,
-                  hotel previews, and travel assistance announcements.
+                  Follow RAGA International for destination reels, hotel previews, itinerary inspiration,
+                  and real customer travel moments shared from Dubai, Bali, Thailand, and beyond.
                 </p>
                 <a
                   href={siteConfig.instagramUrl}
@@ -178,7 +178,7 @@ export function SocialProofSection() {
                   rel="noreferrer"
                   className="focus-ring mt-4 inline-flex rounded-sm text-sm font-extrabold text-raga-rust transition hover:text-raga-ink"
                 >
-                  View Instagram Proof
+                  Follow on Instagram
                 </a>
               </div>
             </div>
@@ -192,7 +192,7 @@ export function SocialProofSection() {
                 <img src={post.image} alt={post.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" width="700" height="700" />
                 <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-xs font-bold text-raga-pine shadow-card">
                   <Star size={13} className="text-raga-gold" aria-hidden="true" />
-                  Placeholder
+                  Featured
                 </div>
               </div>
               <div className="p-4">

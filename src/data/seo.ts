@@ -1,6 +1,5 @@
 import { siteConfig } from '@/constants/site';
 
-// TODO: Move page-level SEO fields to CMS/API when marketing content becomes editable.
 export const pageSeo = {
   home: {
     title: 'International Holiday Packages',
