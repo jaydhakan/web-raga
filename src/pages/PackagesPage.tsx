@@ -1,9 +1,11 @@
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { Seo } from '@/components/common/Seo';
 import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
 import { PackageCard } from '@/components/packages/PackageCard';
 import { travelPackages } from '@/data/packages';
+import { pageSeo } from '@/data/seo';
 import { getPackageCategories, getTravelKinds } from '@/utils/packageUtils';
 
 const travelTypeFilters = ['Domestic', 'International', 'Group', 'Honeymoon'] as const;
@@ -14,6 +16,10 @@ export function PackagesPage() {
   const [activeTravelType, setActiveTravelType] = useState('All');
 
   const categories = useMemo(() => ['All', ...getPackageCategories()], []);
+  const variantCount = useMemo(
+    () => travelPackages.reduce((total, item) => total + item.variants.length, 0),
+    [],
+  );
 
   const filteredPackages = useMemo(() => {
     const normalizedSearch = searchTerm.trim().toLowerCase();
@@ -51,6 +57,7 @@ export function PackagesPage() {
 
   return (
     <section className="py-20">
+      <Seo {...pageSeo.packages} />
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
@@ -61,8 +68,8 @@ export function PackagesPage() {
           </div>
           <div className="rounded-brand border border-raga-ink/8 bg-raga-ivory p-6 shadow-card">
             <p className="text-base leading-8 text-raga-ink/70">
-              Compare curated packages by destination, trip style, hotel category, and starting price.
-              Every card is powered by static variant data that can later come from a CMS or booking API.
+              Compare curated holidays by destination, trip style, hotel category, and starting price.
+              Choose a route, then send the exact package and variant to our team on WhatsApp.
             </p>
             <div className="mt-5 grid grid-cols-2 gap-3 text-sm font-bold text-raga-pine sm:grid-cols-4">
               <div>
@@ -70,7 +77,7 @@ export function PackagesPage() {
                 Trips
               </div>
               <div>
-                <p className="font-display text-3xl text-raga-ink">20+</p>
+                <p className="font-display text-3xl text-raga-ink">{variantCount}</p>
                 Price plans
               </div>
               <div>

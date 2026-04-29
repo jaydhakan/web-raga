@@ -1,3 +1,4 @@
+import { Instagram } from 'lucide-react';
 import { siteConfig } from '@/constants/site';
 import { navigationLinks } from '@/data/navigation';
 import { Container } from '@/components/common/Container';
@@ -25,6 +26,15 @@ export function Footer() {
           <div className="grid gap-3 text-sm text-raga-linen/72">
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             <a href={`tel:${siteConfig.phone.replaceAll(' ', '')}`}>{siteConfig.phone}</a>
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition hover:text-white"
+            >
+              <Instagram size={16} aria-hidden="true" />
+              {siteConfig.instagramHandle}
+            </a>
           </div>
         </div>
       </Container>

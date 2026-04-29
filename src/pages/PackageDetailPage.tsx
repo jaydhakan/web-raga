@@ -1,6 +1,7 @@
 import { Check, Clock, Hotel, MessageCircle, Sparkles, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+import { Seo } from '@/components/common/Seo';
 import { Container } from '@/components/common/Container';
 import { Button } from '@/components/common/Button';
 import { ItinerarySection } from '@/components/packages/ItinerarySection';
@@ -8,7 +9,8 @@ import { PackageCard } from '@/components/packages/PackageCard';
 import { ContactCtaSection } from '@/components/sections/ContactCtaSection';
 import { travelPackages } from '@/data/packages';
 import type { PackageVariant } from '@/types/package';
-import { getPackageBySlug, getStartingVariant, getVariantWhatsAppUrl } from '@/utils/packageUtils';
+import { getPackageBySlug, getStartingVariant } from '@/utils/packageUtils';
+import { getVariantWhatsAppUrl } from '@/utils/whatsapp';
 
 const getDisplayPrice = (variant: PackageVariant) =>
   variant.discountedPrice
@@ -42,13 +44,22 @@ export function PackageDetailPage() {
   const selectedVariant =
     item.variants.find((variant) => variant.variantName === selectedVariantName) ?? fallbackVariant;
   const whatsappUrl = getVariantWhatsAppUrl(item, selectedVariant);
+  const seoDescription = `${item.shortDescription} Compare ${item.variants
+    .map((variant) => variant.variantName)
+    .join(', ')} variants with RAGA International.`;
 
   return (
     <>
+      <Seo
+        title={`${item.title} Package`}
+        description={seoDescription}
+        path={`/packages/${item.slug}`}
+        image={item.heroImage}
+      />
       <section className="relative overflow-hidden bg-raga-ink text-white">
         <img
           src={item.heroImage}
-          alt={item.title}
+          alt={`${item.title} package hero image showing ${item.destination}`}
           className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,26,23,0.96)_0%,rgba(20,26,23,0.78)_48%,rgba(20,26,23,0.38)_100%)]" />
@@ -202,7 +213,7 @@ export function PackageDetailPage() {
               >
                 <img
                   src={image}
-                  alt={`${item.title} gallery ${index + 1}`}
+                  alt={`${item.title} travel gallery image ${index + 1} for ${item.destination}`}
                   className="h-full min-h-64 w-full object-cover"
                   loading="lazy"
                 />

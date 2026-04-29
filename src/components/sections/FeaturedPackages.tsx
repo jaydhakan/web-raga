@@ -11,9 +11,9 @@ export function FeaturedPackages() {
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            eyebrow="Signature escapes"
+            eyebrow="Best-selling international holidays"
             title="Featured packages"
-            description="Static package data for v1, shaped so a CMS or API can later provide the same contract."
+            description="Handpicked routes with clear budget, standard, premium, and luxury options so you can compare comfort levels before enquiring."
           />
         </div>
         <div className="mt-12 grid gap-7 md:grid-cols-3">

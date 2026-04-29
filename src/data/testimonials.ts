@@ -1,25 +1,26 @@
 import type { Testimonial } from '@/types/shared';
 
+// TODO: Replace placeholder testimonials with verified customer reviews or CMS-managed social proof.
 export const testimonials: Testimonial[] = [
   {
     id: 't-01',
-    name: 'Ananya Mehta',
-    location: 'Mumbai',
+    name: 'Priya Nair',
+    location: 'Kochi',
     quote:
-      'Every stay, meal, and guide felt handpicked. RAGA made Ladakh feel intimate without removing the sense of wonder.',
+      'RAGA International made our Bali honeymoon feel effortless. The villa, transfers, and day tours were exactly what we asked for, and the WhatsApp support was very responsive.',
   },
   {
     id: 't-02',
-    name: 'Rohit Sen',
-    location: 'Bengaluru',
+    name: 'Amit Shah',
+    location: 'Ahmedabad',
     quote:
-      'The itinerary had the right rhythm: enough structure to feel cared for and enough space to be surprised.',
+      'We booked Dubai for a family of six. The team suggested the right hotel area, avoided overpacking the itinerary, and kept the trip comfortable for our parents and kids.',
   },
   {
     id: 't-03',
-    name: 'Mira Kapoor',
-    location: 'Delhi',
+    name: 'Neha and Varun',
+    location: 'Pune',
     quote:
-      'A premium trip that still felt grounded. The local hosts and quiet details made the experience memorable.',
+      'The Singapore cruise package was explained clearly with cabin options and inclusions. We knew exactly what was included before paying, which gave us confidence.',
   },
 ];

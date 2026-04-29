@@ -5,8 +5,8 @@ import {
   getBestSellingVariant,
   getDurationRange,
   getLowestPriceVariant,
-  getPackageWhatsAppUrl,
 } from '@/utils/packageUtils';
+import { getPackageWhatsAppUrl } from '@/utils/whatsapp';
 
 type PackageCardProps = {
   item: TravelPackage;
@@ -23,7 +23,7 @@ export function PackageCard({ item }: PackageCardProps) {
       <div className="relative aspect-[4/3] overflow-hidden bg-raga-sand">
         <img
           src={item.heroImage}
-          alt={item.title}
+          alt={`${item.title} package card image for ${item.destination}`}
           className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
           loading="lazy"
         />

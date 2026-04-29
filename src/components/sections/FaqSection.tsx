@@ -2,13 +2,23 @@ import { faqs } from '@/data/faqs';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 
-export function FaqSection() {
+type FaqSectionProps = {
+  preview?: boolean;
+};
+
+export function FaqSection({ preview = false }: FaqSectionProps) {
+  const visibleFaqs = preview ? faqs.slice(0, 3) : faqs;
+
   return (
     <section className="py-24">
       <Container>
-        <SectionHeading eyebrow="Good to know" title="Frequently asked questions" />
+        <SectionHeading
+          eyebrow="Before you book"
+          title={preview ? 'Quick answers for new travellers' : 'Frequently asked questions'}
+          description="Straight answers on customization, pricing, group travel, and how the enquiry process works."
+        />
         <div className="mt-12 grid gap-4">
-          {faqs.map((item) => (
+          {visibleFaqs.map((item) => (
             <details key={item.id} className="group rounded-brand border border-raga-ink/10 bg-raga-ivory p-6 shadow-card">
               <summary className="cursor-pointer list-none font-bold">
                 <span className="flex items-center justify-between gap-4">

@@ -1,5 +1,4 @@
 import { travelPackages } from '@/data/packages';
-import { siteConfig } from '@/constants/site';
 import type { PackageVariant } from '@/types/package';
 import type { TravelPackage } from '@/types/package';
 
@@ -46,23 +45,4 @@ export const getTravelKinds = (item: TravelPackage) => {
   }
 
   return kinds;
-};
-
-export const getPackageWhatsAppUrl = (item: TravelPackage) => {
-  const variant = getLowestPriceVariant(item);
-  const message = `Hi RAGA International, I want to enquire about ${item.title} (${variant.priceLabel}).`;
-
-  return `${siteConfig.whatsappUrl}?text=${encodeURIComponent(message)}`;
-};
-
-export const getVariantWhatsAppUrl = (item: TravelPackage, variant: PackageVariant) => {
-  const message = [
-    'Hi RAGA International, I want to enquire about:',
-    `Package: ${item.title}`,
-    `Variant: ${variant.variantName}`,
-    `Duration: ${variant.duration}`,
-    `Price: ${variant.priceLabel}`,
-  ].join('\n');
-
-  return `${siteConfig.whatsappUrl}?text=${encodeURIComponent(message)}`;
 };
