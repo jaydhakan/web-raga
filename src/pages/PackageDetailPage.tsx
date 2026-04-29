@@ -60,7 +60,7 @@ export function PackageDetailPage() {
         <img
           src={item.heroImage}
           alt={`${item.title} package hero image showing ${item.destination}`}
-          className="absolute inset-0 h-full w-full object-cover opacity-44 saturate-[0.92]"
+          className="absolute inset-0 h-full w-full object-cover opacity-44"
           width="2200"
           height="1467"
           fetchPriority="high"

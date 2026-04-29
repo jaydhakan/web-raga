@@ -30,7 +30,7 @@ export function PackageCard({ item }: PackageCardProps) {
           height="675"
         />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-raga-ink/72 to-transparent" />
-        <div className="absolute left-4 top-4 rounded-full bg-raga-ivory/94 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-raga-pine shadow-card backdrop-blur-md">
+        <div className="absolute left-4 top-4 rounded-full bg-raga-ivory/94 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-raga-pine shadow-card">
           {item.packageType}
         </div>
         <div className="absolute bottom-4 left-4 inline-flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full bg-raga-gold px-3 py-1.5 text-xs font-extrabold text-raga-ink shadow-card">

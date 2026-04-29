@@ -1,11 +1,23 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@/components/layout/AppLayout';
-import { AboutPage } from '@/pages/AboutPage';
-import { ContactPage } from '@/pages/ContactPage';
 import { HomePage } from '@/pages/HomePage';
-import { NotFoundPage } from '@/pages/NotFoundPage';
-import { PackageDetailPage } from '@/pages/PackageDetailPage';
-import { PackagesPage } from '@/pages/PackagesPage';
+
+const AboutPage = lazy(() =>
+  import('@/pages/AboutPage').then((m) => ({ default: m.AboutPage })),
+);
+const ContactPage = lazy(() =>
+  import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })),
+);
+const NotFoundPage = lazy(() =>
+  import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
+);
+const PackageDetailPage = lazy(() =>
+  import('@/pages/PackageDetailPage').then((m) => ({ default: m.PackageDetailPage })),
+);
+const PackagesPage = lazy(() =>
+  import('@/pages/PackagesPage').then((m) => ({ default: m.PackagesPage })),
+);
 
 export const router = createBrowserRouter([
   {

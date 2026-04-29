@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { FloatingWhatsAppButton } from '@/components/common/FloatingWhatsAppButton';
 import { Footer } from '@/components/layout/Footer';
@@ -8,7 +9,9 @@ export function AppLayout() {
     <div className="min-h-screen bg-raga-linen text-raga-ink">
       <Navbar />
       <main className="overflow-hidden">
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <FloatingWhatsAppButton />

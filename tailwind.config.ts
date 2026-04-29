@@ -41,8 +41,8 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         'soft-pulse': {
-          '0%, 100%': { boxShadow: '0 18px 44px rgba(17, 23, 20, 0.08)' },
-          '50%': { boxShadow: '0 24px 70px rgba(200, 154, 76, 0.22)' },
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.6' },
         },
       },
       animation: {

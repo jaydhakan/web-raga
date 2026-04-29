@@ -10,7 +10,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-raga-ink/10 bg-raga-ivory/86 shadow-sm backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-raga-ink/10 bg-raga-ivory/92 shadow-sm backdrop-blur-md">
       <Container className="flex h-20 items-center justify-between">
         <NavLink to="/" className="focus-ring rounded-sm font-display text-2xl font-bold tracking-[0.08em] text-raga-ink sm:text-3xl">
           {siteConfig.name}

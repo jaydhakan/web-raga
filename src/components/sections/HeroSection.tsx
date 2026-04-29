@@ -7,11 +7,11 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-raga-ink text-white">
       <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80"
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=75"
         alt="Scenic international holiday route at sunrise"
-        className="absolute inset-0 h-full w-full object-cover opacity-75 saturate-[0.92]"
-        width="2200"
-        height="1467"
+        className="absolute inset-0 h-full w-full object-cover opacity-75"
+        width="1600"
+        height="1067"
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.94)_0%,rgba(17,23,20,0.72)_45%,rgba(17,23,20,0.30)_100%)]" />
@@ -30,13 +30,13 @@ export function HeroSection() {
             package variants, transparent inclusions, and WhatsApp-first planning support.
           </p>
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-white/82">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/14 px-3 py-2">
               <ShieldCheck size={14} aria-hidden="true" /> Verified travel partner
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/14 px-3 py-2">
               <Headphones size={14} aria-hidden="true" /> 24/7 support
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/14 px-3 py-2">
               <Sparkles size={14} aria-hidden="true" /> Custom itineraries
             </span>
           </div>
@@ -58,9 +58,9 @@ export function HeroSection() {
             Free consultation. Transparent inclusions before payment. Best time to book: before peak-season rooms fill up.
           </p>
           <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/18 pt-6 text-sm font-bold text-white/76 sm:gap-4">
-            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">6</strong> curated routes</span>
-            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">20+</strong> price variants</span>
-            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">24/7</strong> trip support</span>
+            <span className="rounded-brand bg-white/10 p-3"><strong className="block font-display text-3xl text-white">6</strong> curated routes</span>
+            <span className="rounded-brand bg-white/10 p-3"><strong className="block font-display text-3xl text-white">20+</strong> price variants</span>
+            <span className="rounded-brand bg-white/10 p-3"><strong className="block font-display text-3xl text-white">24/7</strong> trip support</span>
           </div>
         </div>
       </Container>

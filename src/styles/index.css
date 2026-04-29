@@ -75,9 +75,8 @@ img {
 
   .premium-card {
     @apply rounded-premium border border-raga-ink/10 bg-raga-ivory shadow-card transition duration-300 ease-out hover:-translate-y-1.5 hover:border-raga-gold/40 hover:shadow-lifted;
-    /* Force GPU compositor layer from initial paint — prevents subpixel text
-       re-rasterization that causes perceived blurring on hover translate */
     transform: translateZ(0);
+    will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
