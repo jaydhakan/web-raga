@@ -17,6 +17,25 @@ npm run build
 npm run lint
 ```
 
+## Tunnel / Custom Host Dev Access
+
+Vite blocks unknown hostnames by default. To allow a tunnel or custom dev hostname,
+copy `.env.example` to `.env` and fill in the `VITE_ALLOWED_HOSTS` value:
+
+```bash
+cp .env.example .env
+# then edit .env:
+VITE_ALLOWED_HOSTS=raga.vectanix.com
+```
+
+Multiple hosts are comma-separated:
+
+```
+VITE_ALLOWED_HOSTS=raga.vectanix.com,preview.vectanix.com
+```
+
+Then run `npm run dev` as normal. `.env` is gitignored — do not commit real hostnames.
+
 ## Folder Structure
 
 ```text
@@ -27,7 +46,9 @@ src/
     common/
       Button.tsx
       Container.tsx
+      FloatingWhatsAppButton.tsx
       SectionHeading.tsx
+      Seo.tsx
     layout/
       AppLayout.tsx
       Footer.tsx
@@ -43,14 +64,19 @@ src/
       FaqSection.tsx
       FeaturedPackages.tsx
       HeroSection.tsx
+      HomeExperienceSections.tsx
       TestimonialsSection.tsx
   constants/
     site.ts
   data/
     faqs.ts
+    homeContent.ts
     navigation.ts
     packages.ts
+    seo.ts
     testimonials.ts
+  hooks/
+    useReveal.ts
   pages/
     AboutPage.tsx
     ContactPage.tsx
