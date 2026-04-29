@@ -48,10 +48,10 @@ export function ContactPage() {
   };
 
   return (
-    <section className="py-20">
+    <section className="section-shell">
       <Seo {...pageSeo.contact} />
       <Container className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
-        <div>
+        <div className="reveal-section">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">Contact RAGA International</p>
           <h1 className="mt-5 font-display text-6xl font-semibold leading-[0.98]">Start with a clear travel brief.</h1>
           <p className="mt-6 text-base leading-8 text-raga-ink/68">
@@ -71,7 +71,7 @@ export function ContactPage() {
           </div>
         </div>
 
-        <form className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-7 shadow-lifted sm:p-9" onSubmit={handleSubmit}>
+        <form className="rounded-premium border border-raga-ink/10 bg-raga-ivory p-7 shadow-lifted sm:p-9" onSubmit={handleSubmit}>
           {/* TODO: Connect this form to an API endpoint, Formspree, EmailJS, or CRM once backend tooling is selected. */}
           <div className="mb-7">
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-raga-rust">Travel brief</p>
@@ -82,7 +82,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Name
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="Your name"
                 value={form.name}
                 onChange={(event) => updateField('name', event.target.value)}
@@ -91,7 +91,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Email
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="you@example.com"
                 type="email"
                 value={form.email}
@@ -101,7 +101,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Preferred destination
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="Dubai, Bali, Singapore..."
                 value={form.destination}
                 onChange={(event) => updateField('destination', event.target.value)}
@@ -110,7 +110,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Travel month
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="June 2026"
                 value={form.travelMonth}
                 onChange={(event) => updateField('travelMonth', event.target.value)}
@@ -119,7 +119,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Travellers
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="2 adults, 1 child"
                 value={form.travelers}
                 onChange={(event) => updateField('travelers', event.target.value)}
@@ -128,7 +128,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82">
               Hotel preference
               <select
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition focus:border-raga-gold focus:bg-white focus:shadow-card"
                 value={form.hotelPreference}
                 onChange={(event) => updateField('hotelPreference', event.target.value)}
               >
@@ -142,7 +142,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82 sm:col-span-2">
               Budget range
               <input
-                className="min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-12 rounded-lg border border-raga-ink/12 bg-white/85 px-4 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="Approx. INR 60,000 per person"
                 value={form.budget}
                 onChange={(event) => updateField('budget', event.target.value)}
@@ -151,7 +151,7 @@ export function ContactPage() {
             <label className="grid gap-2 text-sm font-bold text-raga-ink/82 sm:col-span-2">
               Notes
               <textarea
-                className="min-h-36 rounded-lg border border-raga-ink/12 bg-white/85 px-4 py-3 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
+                className="focus-ring min-h-36 rounded-lg border border-raga-ink/12 bg-white/85 px-4 py-3 font-medium text-raga-ink outline-none transition placeholder:text-raga-ink/35 focus:border-raga-gold focus:bg-white focus:shadow-card"
                 placeholder="Tell us if this is a honeymoon, family trip, group travel, cruise enquiry, or fixed-date holiday."
                 value={form.notes}
                 onChange={(event) => updateField('notes', event.target.value)}
@@ -160,7 +160,7 @@ export function ContactPage() {
           </div>
 
           {isPrepared ? (
-            <div className="mt-6 rounded-brand border border-raga-pine/20 bg-raga-mist/70 p-5">
+            <div className="mt-6 rounded-premium border border-raga-pine/20 bg-raga-mist/70 p-5">
               <p className="flex items-center gap-2 text-sm font-extrabold text-raga-pine">
                 <CheckCircle2 size={18} aria-hidden="true" />
                 Your WhatsApp enquiry is ready.
@@ -177,7 +177,7 @@ export function ContactPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-raga-pine/20 bg-white px-6 py-3 text-sm font-bold text-raga-pine shadow-sm transition hover:-translate-y-0.5 hover:border-raga-gold hover:shadow-card"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-raga-pine/20 bg-white px-6 py-3 text-sm font-extrabold text-raga-pine shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-raga-gold hover:shadow-card"
             >
               <MessageCircle className="mr-2" size={18} aria-hidden="true" />
               Continue on WhatsApp

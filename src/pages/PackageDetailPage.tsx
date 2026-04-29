@@ -60,11 +60,12 @@ export function PackageDetailPage() {
         <img
           src={item.heroImage}
           alt={`${item.title} package hero image showing ${item.destination}`}
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-44 saturate-[0.92]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,26,23,0.96)_0%,rgba(20,26,23,0.78)_48%,rgba(20,26,23,0.38)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.97)_0%,rgba(17,23,20,0.78)_48%,rgba(17,23,20,0.38)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(200,154,76,0.20),transparent_24rem)]" />
         <Container className="relative grid gap-12 py-16 lg:grid-cols-[1fr_0.86fr] lg:items-end">
-          <div>
+          <div className="reveal-section">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-raga-gold">{item.packageType}</p>
             <h1 className="mt-5 font-display text-6xl font-semibold leading-[0.95] sm:text-7xl">{item.title}</h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/76 sm:text-lg sm:leading-9">{item.overview}</p>
@@ -84,7 +85,7 @@ export function PackageDetailPage() {
             </div>
           </div>
 
-          <aside className="rounded-brand border border-white/12 bg-raga-ivory p-6 text-raga-ink shadow-lifted lg:sticky lg:top-28">
+          <aside className="rounded-premium border border-white/12 bg-raga-ivory p-6 text-raga-ink shadow-glow lg:sticky lg:top-28">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">Selected plan</p>
             <h2 className="mt-3 font-display text-4xl font-semibold">{selectedVariant.variantName}</h2>
             <p className="mt-2 text-3xl font-extrabold text-raga-pine">{getDisplayPrice(selectedVariant)}</p>
@@ -105,7 +106,7 @@ export function PackageDetailPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-pine px-6 py-3 text-sm font-bold text-raga-ivory shadow-card transition hover:-translate-y-0.5 hover:bg-raga-ink hover:shadow-lifted"
+              className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-pine px-6 py-3 text-sm font-extrabold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-forest hover:shadow-glow"
             >
               <MessageCircle className="mr-2" size={18} aria-hidden="true" />
               Enquire on WhatsApp
@@ -124,7 +125,7 @@ export function PackageDetailPage() {
             ['Best time', item.bestTimeToVisit],
             ['Country', item.country],
           ].map(([label, value]) => (
-            <div key={label} className="rounded-brand bg-raga-ivory p-5 shadow-card">
+            <div key={label} className="premium-panel p-5">
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-raga-rust">{label}</p>
               <p className="mt-2 font-bold text-raga-pine">{value}</p>
             </div>
@@ -148,8 +149,8 @@ export function PackageDetailPage() {
                   key={variant.variantName}
                   className={`rounded-brand border p-5 text-left shadow-card transition hover:-translate-y-1 ${
                     isSelected
-                      ? 'border-raga-gold bg-raga-pine text-raga-ivory shadow-lifted'
-                      : 'border-raga-ink/10 bg-raga-ivory text-raga-ink hover:border-raga-gold'
+                      ? 'border-raga-gold bg-raga-pine text-raga-ivory shadow-glow'
+                      : 'border-raga-ink/10 bg-raga-ivory text-raga-ink hover:border-raga-gold hover:shadow-lifted'
                   }`}
                   type="button"
                   onClick={() => setSelectedVariantName(variant.variantName)}
@@ -171,7 +172,7 @@ export function PackageDetailPage() {
         </section>
 
         <section className="grid gap-7 py-16 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-brand bg-raga-pine p-7 text-raga-ivory shadow-lifted">
+          <div className="rounded-premium bg-raga-pine p-7 text-raga-ivory shadow-lifted">
             <h2 className="font-display text-4xl font-semibold">Included in {selectedVariant.variantName}</h2>
             <ul className="mt-6 grid gap-3 text-sm leading-7 text-raga-ivory/84">
               {selectedVariant.inclusions.map((inclusion) => (
@@ -182,7 +183,7 @@ export function PackageDetailPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-7 shadow-card">
+          <div className="premium-panel p-7">
             <h2 className="font-display text-4xl font-semibold">Not included</h2>
             <ul className="mt-6 grid gap-3 text-sm leading-7 text-raga-ink/68">
               {selectedVariant.exclusions.map((exclusion) => (
@@ -209,12 +210,12 @@ export function PackageDetailPage() {
             {item.gallery.map((image, index) => (
               <div
                 key={image}
-                className={`overflow-hidden rounded-brand shadow-card ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
+                className={`group overflow-hidden rounded-premium shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lifted ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
               >
                 <img
                   src={image}
                   alt={`${item.title} travel gallery image ${index + 1} for ${item.destination}`}
-                  className="h-full min-h-64 w-full object-cover"
+                  className="image-zoom h-full min-h-64 w-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -228,7 +229,7 @@ export function PackageDetailPage() {
             {item.highlights.map((highlight) => (
               <div
                 key={highlight}
-                className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-6 text-sm font-bold leading-6 shadow-card"
+                className="premium-card p-6 text-sm font-bold leading-6"
               >
                 <Sparkles className="mb-4 text-raga-gold" size={20} aria-hidden="true" />
                 {highlight}
@@ -240,11 +241,11 @@ export function PackageDetailPage() {
         <ItinerarySection itinerary={item.itinerary} />
 
         <section className="grid gap-7 py-20 lg:grid-cols-3">
-          <div className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-6 shadow-card">
+          <div className="premium-panel p-6">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-raga-rust">Best time</p>
             <p className="mt-4 text-lg font-bold text-raga-pine">{item.bestTimeToVisit}</p>
           </div>
-          <div className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-6 shadow-card">
+          <div className="premium-panel p-6">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-raga-rust">Suitable for</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {item.suitableFor.map((travelerType) => (
@@ -254,7 +255,7 @@ export function PackageDetailPage() {
               ))}
             </div>
           </div>
-          <div className="rounded-brand border border-raga-ink/10 bg-raga-ivory p-6 shadow-card">
+          <div className="premium-panel p-6">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-raga-rust">Good to know</p>
             <p className="mt-4 text-sm leading-7 text-raga-ink/68">
               Prices are indicative and depend on season, availability, flight timings, room category, and final inclusions.
@@ -262,7 +263,7 @@ export function PackageDetailPage() {
           </div>
         </section>
 
-        <section className="rounded-brand bg-raga-ink p-7 text-raga-ivory shadow-lifted sm:p-10">
+        <section className="rounded-premium bg-raga-ink p-7 text-raga-ivory shadow-glow sm:p-10">
           <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-gold">{selectedVariant.variantName} selected</p>

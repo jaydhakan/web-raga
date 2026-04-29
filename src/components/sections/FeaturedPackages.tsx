@@ -7,7 +7,7 @@ export function FeaturedPackages() {
   const featuredPackages = getFeaturedPackages();
 
   return (
-    <section className="py-24">
+    <section className="section-shell reveal-section">
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading

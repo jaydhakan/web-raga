@@ -8,14 +8,14 @@ export function AboutPage() {
   return (
     <>
       <Seo {...pageSeo.about} />
-      <section className="py-24">
+      <section className="section-shell">
         <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <SectionHeading
             eyebrow="About RAGA International"
             title="International travel planning with a human point of view."
             description="RAGA International helps travellers choose the right destination, hotel tier, sightseeing pace, and package variant without feeling overwhelmed."
           />
-          <div className="space-y-5 rounded-brand border border-raga-ink/8 bg-raga-ivory p-7 text-base leading-8 text-raga-ink/68 shadow-card sm:p-9">
+          <div className="premium-panel space-y-5 p-7 text-base leading-8 text-raga-ink/68 sm:p-9">
             <p>
               Our approach is simple: start with proven international routes, explain the real differences
               between budget and premium options, then customize the journey around your dates, group size,

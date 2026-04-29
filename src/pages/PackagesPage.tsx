@@ -56,17 +56,17 @@ export function PackagesPage() {
   };
 
   return (
-    <section className="py-20">
+    <section className="section-shell">
       <Seo {...pageSeo.packages} />
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+        <div className="reveal-section grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">RAGA International</p>
             <h1 className="mt-5 font-display text-6xl font-semibold leading-[0.92] text-raga-ink sm:text-7xl">
               Find your next international holiday.
             </h1>
           </div>
-          <div className="rounded-brand border border-raga-ink/8 bg-raga-ivory p-6 shadow-card">
+          <div className="premium-panel p-6">
             <p className="text-base leading-8 text-raga-ink/70">
               Compare curated holidays by destination, trip style, hotel category, and starting price.
               Choose a route, then send the exact package and variant to our team on WhatsApp.
@@ -92,7 +92,7 @@ export function PackagesPage() {
           </div>
         </div>
 
-        <div className="mt-12 rounded-brand border border-raga-ink/10 bg-raga-ivory p-5 shadow-lifted">
+        <div className="mt-12 rounded-premium border border-raga-ink/10 bg-raga-ivory p-5 shadow-lifted">
           <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
             <label className="relative block">
               <Search
@@ -103,7 +103,7 @@ export function PackagesPage() {
               <input
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
-                className="min-h-14 w-full rounded-full border border-raga-ink/10 bg-white px-12 text-sm font-semibold text-raga-ink outline-none transition placeholder:text-raga-ink/38 focus:border-raga-gold focus:shadow-card"
+                className="focus-ring min-h-14 w-full rounded-full border border-raga-ink/10 bg-white px-12 text-sm font-semibold text-raga-ink outline-none transition placeholder:text-raga-ink/38 focus:border-raga-gold focus:shadow-card"
                 placeholder="Search Dubai, Bali, cruise, honeymoon..."
                 type="search"
               />
@@ -185,7 +185,7 @@ export function PackagesPage() {
             ))}
           </div>
         ) : (
-          <div className="mt-10 rounded-brand border border-dashed border-raga-ink/18 bg-raga-ivory p-10 text-center shadow-card">
+          <div className="mt-10 rounded-premium border border-dashed border-raga-ink/18 bg-raga-ivory p-10 text-center shadow-card">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">No trips found</p>
             <h2 className="mt-4 font-display text-5xl font-semibold">Try a wider search.</h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-raga-ink/68">

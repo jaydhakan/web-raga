@@ -5,7 +5,7 @@ import { SectionHeading } from '@/components/common/SectionHeading';
 
 export function TestimonialsSection() {
   return (
-    <section className="border-y border-raga-ink/8 bg-raga-ivory py-24">
+    <section className="section-shell border-y border-raga-ink/8 bg-raga-ivory">
       <Container>
         <SectionHeading
           eyebrow="Traveler confidence"
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {testimonials.map((item) => (
-            <figure key={item.id} className="rounded-brand border border-raga-ink/8 bg-raga-linen p-7 shadow-card">
+            <figure key={item.id} className="premium-card p-7">
               <div className="mb-5 flex gap-1 text-raga-gold" aria-label="Five star placeholder review">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} size={16} fill="currentColor" aria-hidden="true" />

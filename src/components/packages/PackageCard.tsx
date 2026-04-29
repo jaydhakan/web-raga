@@ -19,25 +19,25 @@ export function PackageCard({ item }: PackageCardProps) {
   const whatsappUrl = getPackageWhatsAppUrl(item);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-brand border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
+    <article className="premium-card group flex h-full flex-col overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden bg-raga-sand">
         <img
           src={item.heroImage}
           alt={`${item.title} package card image for ${item.destination}`}
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          className="image-zoom h-full w-full object-cover"
           loading="lazy"
         />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-raga-ink/72 to-transparent" />
-        <div className="absolute left-4 top-4 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-raga-pine shadow-card">
+        <div className="absolute left-4 top-4 rounded-full bg-raga-ivory/94 px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-raga-pine shadow-card backdrop-blur-md">
           {item.packageType}
         </div>
-        <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-raga-gold px-3 py-1.5 text-[0.68rem] font-bold text-raga-ink shadow-card">
+        <div className="absolute bottom-4 left-4 inline-flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full bg-raga-gold px-3 py-1.5 text-[0.68rem] font-extrabold text-raga-ink shadow-card">
           <Sparkles size={13} aria-hidden="true" />
           Best seller: {bestSellingVariant.variantName}
         </div>
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-4 flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-raga-rust">
+        <div className="mb-4 flex items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-[0.24em] text-raga-rust">
           <MapPin size={14} aria-hidden="true" />
           {item.destination}, {item.country}
         </div>
@@ -54,7 +54,7 @@ export function PackageCard({ item }: PackageCardProps) {
         </ul>
 
         <div className="mt-auto pt-6">
-          <div className="rounded-brand border border-raga-ink/8 bg-white/70 p-4">
+          <div className="rounded-brand border border-raga-ink/8 bg-white/72 p-4 shadow-sm">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-raga-ink/45">
               Duration
             </p>
@@ -74,7 +74,7 @@ export function PackageCard({ item }: PackageCardProps) {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-raga-pine px-5 py-3 text-sm font-bold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-ink hover:shadow-lifted"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-raga-pine px-5 py-3 text-sm font-extrabold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-forest hover:shadow-glow"
           >
             <MessageCircle className="mr-2" size={17} aria-hidden="true" />
             Enquire

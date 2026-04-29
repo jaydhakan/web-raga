@@ -7,11 +7,11 @@ type ItinerarySectionProps = {
 
 export function ItinerarySection({ itinerary }: ItinerarySectionProps) {
   return (
-    <section className="py-20">
+    <section className="section-shell">
       <SectionHeading eyebrow="Journey rhythm" title="Itinerary" />
       <div className="mt-12 grid gap-5">
         {itinerary.map((day) => (
-          <article key={day.day} className="grid gap-5 rounded-brand border border-raga-ink/8 border-l-4 border-l-raga-gold bg-raga-ivory p-6 shadow-card sm:grid-cols-[104px_1fr]">
+          <article key={day.day} className="premium-card grid gap-5 border-l-4 border-l-raga-gold p-6 sm:grid-cols-[104px_1fr]">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-raga-rust">Day {day.day}</p>
             <div>
               <h3 className="font-display text-3xl font-semibold leading-tight">{day.title}</h3>

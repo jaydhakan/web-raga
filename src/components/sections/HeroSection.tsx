@@ -9,12 +9,13 @@ export function HeroSection() {
       <img
         src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80"
         alt="Scenic international holiday route at sunrise"
-        className="absolute inset-0 h-full w-full object-cover opacity-70 saturate-[0.9]"
+        className="absolute inset-0 h-full w-full object-cover opacity-75 saturate-[0.92]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,26,23,0.92)_0%,rgba(20,26,23,0.72)_42%,rgba(20,26,23,0.28)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.94)_0%,rgba(17,23,20,0.72)_45%,rgba(17,23,20,0.30)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,154,76,0.20),transparent_24rem)]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-raga-linen to-transparent" />
       <Container className="relative flex min-h-[calc(100vh-5rem)] items-center py-24">
-        <div className="max-w-4xl">
+        <div className="reveal-section max-w-4xl">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-raga-gold">
             RAGA International holidays
           </p>
@@ -39,10 +40,10 @@ export function HeroSection() {
               Plan on WhatsApp
             </a>
           </div>
-          <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/18 pt-6 text-sm font-bold text-white/76">
-            <span><strong className="block font-display text-3xl text-white">6</strong> curated routes</span>
-            <span><strong className="block font-display text-3xl text-white">20+</strong> price variants</span>
-            <span><strong className="block font-display text-3xl text-white">24/7</strong> trip support</span>
+          <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/18 pt-6 text-sm font-bold text-white/76 sm:gap-4">
+            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">6</strong> curated routes</span>
+            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">20+</strong> price variants</span>
+            <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">24/7</strong> trip support</span>
           </div>
         </div>
       </Container>

@@ -30,7 +30,7 @@ const iconMap = {
 
 export function WhyChooseSection() {
   return (
-    <section className="bg-raga-ivory py-24">
+    <section className="section-shell bg-raga-ivory">
       <Container>
         <SectionHeading
           eyebrow="Why choose RAGA International"
@@ -42,7 +42,7 @@ export function WhyChooseSection() {
             const Icon = iconMap[icon];
 
             return (
-            <article key={title} className="rounded-brand border border-raga-ink/8 bg-raga-linen p-7 shadow-card">
+            <article key={title} className="premium-card p-7">
               <div className="mb-6 inline-flex size-12 items-center justify-center rounded-full bg-raga-pine text-raga-ivory">
                 <Icon size={22} aria-hidden="true" />
               </div>
@@ -52,7 +52,7 @@ export function WhyChooseSection() {
             );
           })}
         </div>
-        <div className="mt-8 grid gap-3 rounded-brand border border-raga-ink/8 bg-raga-ivory p-5 shadow-card sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-3 rounded-premium border border-raga-ink/8 bg-raga-ivory p-5 shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {trustBadges.map((badge) => (
             <div key={badge} className="flex items-center gap-3 text-sm font-bold text-raga-pine">
               <ShieldCheck size={18} className="text-raga-gold" aria-hidden="true" />
@@ -67,7 +67,7 @@ export function WhyChooseSection() {
 
 export function PopularDestinationsSection() {
   return (
-    <section className="py-24">
+    <section className="section-shell">
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
@@ -84,12 +84,12 @@ export function PopularDestinationsSection() {
             <Link
               key={item.id}
               to={`/packages/${item.slug}`}
-              className="group relative min-h-72 overflow-hidden rounded-brand shadow-card"
+              className="group relative min-h-72 overflow-hidden rounded-premium shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted"
             >
               <img
                 src={item.heroImage}
                 alt={`${item.title} international holiday package by RAGA International`}
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                className="image-zoom absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-raga-ink/88 via-raga-ink/20 to-transparent" />
@@ -108,7 +108,7 @@ export function PopularDestinationsSection() {
 
 export function CustomTripsCtaSection() {
   return (
-    <section className="bg-raga-pine py-20 text-raga-ivory">
+    <section className="section-shell bg-raga-pine text-raga-ivory">
       <Container className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-gold">Groups and custom holidays</p>
@@ -120,7 +120,7 @@ export function CustomTripsCtaSection() {
             with the right rooming, transfers, and price tier.
           </p>
         </div>
-        <div className="rounded-brand border border-raga-ivory/12 bg-white/8 p-6 shadow-lifted">
+        <div className="rounded-premium border border-raga-ivory/12 bg-white/8 p-6 shadow-lifted backdrop-blur-md">
           <div className="grid gap-4 text-sm font-bold text-raga-ivory/82">
             {customTripPoints.map(({ label, icon }) => {
               const Icon = iconMap[icon];
@@ -139,7 +139,7 @@ export function CustomTripsCtaSection() {
             })}
             target="_blank"
             rel="noreferrer"
-            className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-bold text-raga-ink shadow-card transition hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-lifted"
+            className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-extrabold text-raga-ink shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-glow"
           >
             Plan a custom trip
           </a>
@@ -151,7 +151,7 @@ export function CustomTripsCtaSection() {
 
 export function SocialProofSection() {
   return (
-    <section className="bg-raga-ivory py-24">
+    <section className="section-shell bg-raga-ivory">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <SectionHeading
@@ -159,7 +159,7 @@ export function SocialProofSection() {
             title="A feed-ready space for real traveller moments."
             description="Placeholder cards are used for now. This section is structured so real Instagram posts, reels, customer tags, or curated travel albums can replace them later."
           />
-          <div className="rounded-brand border border-raga-ink/8 bg-raga-linen p-6 shadow-card">
+          <div className="rounded-premium border border-raga-ink/8 bg-raga-linen p-6 shadow-card">
             <div className="flex items-start gap-4">
               <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-raga-pine text-raga-ivory">
                 <Instagram size={22} aria-hidden="true" />
@@ -185,9 +185,9 @@ export function SocialProofSection() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {socialProofPosts.map((post) => (
-            <article key={post.label} className="overflow-hidden rounded-brand border border-raga-ink/8 bg-raga-ivory shadow-card">
+            <article key={post.label} className="group overflow-hidden rounded-premium border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
               <div className="relative">
-                <img src={post.image} alt={post.alt} className="aspect-square w-full object-cover" loading="lazy" />
+                <img src={post.image} alt={post.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" />
                 <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-xs font-bold text-raga-pine shadow-card">
                   <Star size={13} className="text-raga-gold" aria-hidden="true" />
                   Placeholder

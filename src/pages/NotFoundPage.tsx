@@ -5,7 +5,7 @@ import { pageSeo } from '@/data/seo';
 
 export function NotFoundPage() {
   return (
-    <section className="py-28">
+    <section className="section-shell">
       <Seo {...pageSeo.notFound} />
       <Container className="text-center">
         <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">404</p>
