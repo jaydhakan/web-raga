@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { siteConfig } from '@/constants/site';
 import { navigationLinks } from '@/data/navigation';
 import { Container } from '@/components/common/Container';
@@ -19,22 +20,22 @@ export function Footer() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-raga-gold">Explore</p>
           <div className="grid gap-3 text-sm text-raga-linen/72">
             {navigationLinks.map((link) => (
-              <a key={link.href} href={link.href} className="transition hover:translate-x-1 hover:text-white">
+              <Link key={link.href} to={link.href} className="focus-ring rounded-sm transition hover:translate-x-1 hover:text-white">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
         <div>
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.26em] text-raga-gold">Contact</p>
           <div className="grid gap-3 text-sm text-raga-linen/72">
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <a href={`tel:${siteConfig.phone.replaceAll(' ', '')}`}>{siteConfig.phone}</a>
+            <a className="focus-ring rounded-sm transition hover:text-white" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a className="focus-ring rounded-sm transition hover:text-white" href={`tel:${siteConfig.phone.replaceAll(' ', '')}`}>{siteConfig.phone}</a>
             <a
               href={siteConfig.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 transition hover:text-white"
+              className="focus-ring inline-flex items-center gap-2 rounded-sm transition hover:text-white"
             >
               <Instagram size={16} aria-hidden="true" />
               {siteConfig.instagramHandle}

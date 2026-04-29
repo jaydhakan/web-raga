@@ -61,6 +61,9 @@ export function PackageDetailPage() {
           src={item.heroImage}
           alt={`${item.title} package hero image showing ${item.destination}`}
           className="absolute inset-0 h-full w-full object-cover opacity-44 saturate-[0.92]"
+          width="2200"
+          height="1467"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.97)_0%,rgba(17,23,20,0.78)_48%,rgba(17,23,20,0.38)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(200,154,76,0.20),transparent_24rem)]" />
@@ -74,19 +77,22 @@ export function PackageDetailPage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-bold text-raga-ink shadow-card transition hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-lifted"
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-bold text-raga-ink shadow-card transition hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-lifted"
               >
                 <MessageCircle className="mr-2" size={18} aria-hidden="true" />
-                WhatsApp enquiry
+                Get Best Price
               </a>
               <Button href="/packages" variant="secondary">
-                Back to packages
+                Compare Packages
               </Button>
             </div>
+            <p className="mt-4 text-sm font-semibold text-white/68">
+              Free consultation. Availability and final pricing confirmed before booking.
+            </p>
           </div>
 
           <aside className="rounded-premium border border-white/12 bg-raga-ivory p-6 text-raga-ink shadow-glow lg:sticky lg:top-28">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">Selected plan</p>
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">Popular this season</p>
             <h2 className="mt-3 font-display text-4xl font-semibold">{selectedVariant.variantName}</h2>
             <p className="mt-2 text-3xl font-extrabold text-raga-pine">{getDisplayPrice(selectedVariant)}</p>
             {selectedVariant.actualPrice && selectedVariant.discountedPrice ? (
@@ -106,13 +112,13 @@ export function PackageDetailPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-pine px-6 py-3 text-sm font-extrabold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-forest hover:shadow-glow"
+              className="focus-ring mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-pine px-6 py-3 text-sm font-extrabold text-raga-ivory shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-forest hover:shadow-glow"
             >
               <MessageCircle className="mr-2" size={18} aria-hidden="true" />
-              Enquire on WhatsApp
+              Check Availability
             </a>
             <p className="mt-4 text-center text-xs font-semibold leading-5 text-raga-ink/48">
-              Includes package, variant, duration, and price in the enquiry message.
+              Includes package, variant, duration, and price. No hidden charges in the final quote.
             </p>
           </aside>
         </Container>
@@ -137,7 +143,8 @@ export function PackageDetailPage() {
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">Choose your comfort</p>
             <h2 className="mt-4 font-display text-5xl font-semibold leading-none">Package variants</h2>
             <p className="mt-5 text-base leading-8 text-raga-ink/68">
-              Select a variant to update the price, hotel category, inclusions, exclusions, and WhatsApp enquiry.
+              Select a variant to update price, hotel category, inclusions, exclusions, and WhatsApp enquiry.
+              Best rooms and cruise cabins usually move fastest during school holidays and long weekends.
             </p>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -147,23 +154,34 @@ export function PackageDetailPage() {
               return (
                 <button
                   key={variant.variantName}
-                  className={`rounded-brand border p-5 text-left shadow-card transition hover:-translate-y-1 ${
+                  className={`focus-ring cursor-pointer rounded-brand border p-5 text-left shadow-card transition hover:-translate-y-1 ${
                     isSelected
                       ? 'border-raga-gold bg-raga-pine text-raga-ivory shadow-glow'
                       : 'border-raga-ink/10 bg-raga-ivory text-raga-ink hover:border-raga-gold hover:shadow-lifted'
                   }`}
                   type="button"
+                  aria-pressed={isSelected}
                   onClick={() => setSelectedVariantName(variant.variantName)}
                 >
                   <span className={`text-xs font-bold uppercase tracking-[0.24em] ${isSelected ? 'text-raga-gold' : 'text-raga-rust'}`}>
                     {variant.variantName}
                   </span>
+                  {variant.variantName === 'Standard' ? (
+                    <span className={`ml-2 rounded-full px-2 py-1 text-[0.62rem] font-extrabold uppercase tracking-[0.14em] ${
+                      isSelected ? 'bg-raga-gold text-raga-ink' : 'bg-raga-sand text-raga-pine'
+                    }`}>
+                      Popular choice
+                    </span>
+                  ) : null}
                   <span className="mt-4 block font-display text-3xl font-semibold">{variant.priceLabel}</span>
                   <span className={`mt-4 flex items-center gap-2 text-sm font-bold ${isSelected ? 'text-raga-ivory/78' : 'text-raga-ink/62'}`}>
                     <Clock size={16} aria-hidden="true" /> {variant.duration}
                   </span>
                   <span className={`mt-2 flex items-center gap-2 text-sm font-bold ${isSelected ? 'text-raga-ivory/78' : 'text-raga-ink/62'}`}>
                     <Hotel size={16} aria-hidden="true" /> {variant.hotelCategory}
+                  </span>
+                  <span className={`mt-4 block text-xs font-bold ${isSelected ? 'text-raga-ivory/62' : 'text-raga-ink/48'}`}>
+                    Free consultation. Final availability checked on enquiry.
                   </span>
                 </button>
               );
@@ -217,6 +235,8 @@ export function PackageDetailPage() {
                   alt={`${item.title} travel gallery image ${index + 1} for ${item.destination}`}
                   className="image-zoom h-full min-h-64 w-full object-cover"
                   loading="lazy"
+                  width="900"
+                  height="700"
                 />
               </div>
             ))}
@@ -259,6 +279,7 @@ export function PackageDetailPage() {
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-raga-rust">Good to know</p>
             <p className="mt-4 text-sm leading-7 text-raga-ink/68">
               Prices are indicative and depend on season, availability, flight timings, room category, and final inclusions.
+              Enquire early for peak travel months and cruise departures.
             </p>
           </div>
         </section>
@@ -270,17 +291,17 @@ export function PackageDetailPage() {
               <h2 className="mt-4 font-display text-5xl font-semibold leading-none">{selectedVariant.priceLabel}</h2>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-raga-ivory/70">
                 Send this exact package and variant to RAGA International on WhatsApp for availability,
-                final costing, and customization.
+                final costing, and customization. This consultation is free.
               </p>
             </div>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-bold text-raga-ink shadow-card transition hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-lifted"
+              className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-bold text-raga-ink shadow-card transition hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-lifted"
             >
               <MessageCircle className="mr-2" size={18} aria-hidden="true" />
-              Enquire for this variant
+              Get Best Price
             </a>
           </div>
         </section>

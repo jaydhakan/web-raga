@@ -50,10 +50,10 @@ export const whyChooseItems: WhyChooseItem[] = [
 ];
 
 export const trustBadges = [
-  'Curated international packages',
-  'Variant-wise transparent pricing',
-  'WhatsApp-first trip assistance',
-  'Group and honeymoon planning',
+  'Verified travel partner',
+  '24/7 travel support',
+  'Custom itineraries',
+  'Transparent package variants',
 ];
 
 export const customTripPoints: CustomTripPoint[] = [

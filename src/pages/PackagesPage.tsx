@@ -63,13 +63,19 @@ export function PackagesPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-raga-rust">RAGA International</p>
             <h1 className="mt-5 font-display text-6xl font-semibold leading-[0.92] text-raga-ink sm:text-7xl">
-              Find your next international holiday.
+              Compare packages. Check availability. Get the best price.
             </h1>
+            <p className="mt-6 max-w-2xl text-base font-semibold leading-8 text-raga-ink/64">
+              Choose a destination, compare variants, then send the exact package to WhatsApp for a free consultation.
+            </p>
           </div>
           <div className="premium-panel p-6">
             <p className="text-base leading-8 text-raga-ink/70">
-              Compare curated holidays by destination, trip style, hotel category, and starting price.
-              Choose a route, then send the exact package and variant to our team on WhatsApp.
+              Pricing is variant-wise and inclusion-led, so you can compare comfort levels before asking
+              RAGA International to check availability for your dates.
+            </p>
+            <p className="mt-3 text-sm font-bold text-raga-rust">
+              Popular season note: book early for school holidays, long weekends, and cruise cabins.
             </p>
             <div className="mt-5 grid grid-cols-2 gap-3 text-sm font-bold text-raga-pine sm:grid-cols-4">
               <div>
@@ -104,8 +110,10 @@ export function PackagesPage() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 className="focus-ring min-h-14 w-full rounded-full border border-raga-ink/10 bg-white px-12 text-sm font-semibold text-raga-ink outline-none transition placeholder:text-raga-ink/38 focus:border-raga-gold focus:shadow-card"
-                placeholder="Search Dubai, Bali, cruise, honeymoon..."
+                placeholder="Search Dubai, Bali, cruise, honeymoon…"
                 type="search"
+                name="package-search"
+                autoComplete="off"
               />
             </label>
 
@@ -121,12 +129,13 @@ export function PackagesPage() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  className={`rounded-full border px-5 py-2.5 text-sm font-bold transition ${
+                  className={`focus-ring min-h-11 cursor-pointer rounded-full border px-5 py-2.5 text-sm font-bold transition ${
                     activeCategory === category
                       ? 'border-raga-pine bg-raga-pine text-raga-ivory shadow-card'
                       : 'border-raga-ink/10 bg-white/75 text-raga-ink/68 hover:border-raga-gold hover:text-raga-pine'
                   }`}
                   type="button"
+                  aria-pressed={activeCategory === category}
                   onClick={() => setActiveCategory(category)}
                 >
                   {category}
@@ -139,12 +148,13 @@ export function PackagesPage() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-raga-ink/45">Trip style</p>
             <div className="flex flex-wrap gap-3">
               <button
-                className={`rounded-full border px-5 py-2.5 text-sm font-bold transition ${
+                className={`focus-ring min-h-11 cursor-pointer rounded-full border px-5 py-2.5 text-sm font-bold transition ${
                   activeTravelType === 'All'
                     ? 'border-raga-pine bg-raga-pine text-raga-ivory shadow-card'
                     : 'border-raga-ink/10 bg-white/75 text-raga-ink/68 hover:border-raga-gold hover:text-raga-pine'
                 }`}
                 type="button"
+                aria-pressed={activeTravelType === 'All'}
                 onClick={() => setActiveTravelType('All')}
               >
                 All
@@ -152,12 +162,13 @@ export function PackagesPage() {
               {travelTypeFilters.map((filter) => (
                 <button
                   key={filter}
-                  className={`rounded-full border px-5 py-2.5 text-sm font-bold transition ${
+                  className={`focus-ring min-h-11 cursor-pointer rounded-full border px-5 py-2.5 text-sm font-bold transition ${
                     activeTravelType === filter
                       ? 'border-raga-pine bg-raga-pine text-raga-ivory shadow-card'
                       : 'border-raga-ink/10 bg-white/75 text-raga-ink/68 hover:border-raga-gold hover:text-raga-pine'
                   }`}
                   type="button"
+                  aria-pressed={activeTravelType === filter}
                   onClick={() => setActiveTravelType(filter)}
                 >
                   {filter}
@@ -168,7 +179,7 @@ export function PackagesPage() {
 
           {hasActiveFilters ? (
             <button
-              className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-raga-rust transition hover:text-raga-ink"
+              className="focus-ring mt-5 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full px-2 text-sm font-bold text-raga-rust transition hover:text-raga-ink"
               type="button"
               onClick={clearFilters}
             >
@@ -194,7 +205,7 @@ export function PackagesPage() {
             </p>
             <div className="mt-7">
               <Button type="button" onClick={clearFilters}>
-                Reset search
+                Reset Filters
               </Button>
             </div>
           </div>

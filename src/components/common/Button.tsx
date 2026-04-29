@@ -29,19 +29,19 @@ const baseClasses =
   'inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-sm font-extrabold tracking-[0.01em] transition duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-raga-linen';
 
 export function Button(props: ButtonProps | ButtonLinkProps) {
-  const { children, className = '', variant = 'primary' } = props;
+  const { children, className = '', variant = 'primary', ...restProps } = props;
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
-  if (typeof props.href === 'string') {
+  if ('href' in restProps && typeof restProps.href === 'string') {
     return (
-      <Link className={classes} to={props.href}>
+      <Link className={classes} to={restProps.href}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} {...(restProps as ButtonHTMLAttributes<HTMLButtonElement>)}>
       {children}
     </button>
   );

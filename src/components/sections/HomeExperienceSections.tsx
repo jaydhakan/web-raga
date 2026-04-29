@@ -76,7 +76,7 @@ export function PopularDestinationsSection() {
             description="Start with a proven route, then refine the hotel tier, duration, experiences, and group requirements."
           />
           <Button href="/packages" variant="secondary">
-            View all packages
+            Compare Packages
           </Button>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -84,13 +84,15 @@ export function PopularDestinationsSection() {
             <Link
               key={item.id}
               to={`/packages/${item.slug}`}
-              className="group relative min-h-72 overflow-hidden rounded-premium shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted"
+              className="focus-ring group relative min-h-72 overflow-hidden rounded-premium shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted"
             >
               <img
                 src={item.heroImage}
                 alt={`${item.title} international holiday package by RAGA International`}
                 className="image-zoom absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
+                width="900"
+                height="675"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-raga-ink/88 via-raga-ink/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-raga-ivory">
@@ -139,9 +141,9 @@ export function CustomTripsCtaSection() {
             })}
             target="_blank"
             rel="noreferrer"
-            className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-extrabold text-raga-ink shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-glow"
+            className="focus-ring mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-raga-gold px-6 py-3 text-sm font-extrabold text-raga-ink shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-raga-sand hover:shadow-glow"
           >
-            Plan a custom trip
+            Plan My Custom Trip
           </a>
         </div>
       </Container>
@@ -174,9 +176,9 @@ export function SocialProofSection() {
                   href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 inline-flex text-sm font-extrabold text-raga-rust transition hover:text-raga-ink"
+                  className="focus-ring mt-4 inline-flex rounded-sm text-sm font-extrabold text-raga-rust transition hover:text-raga-ink"
                 >
-                  Open Instagram profile
+                  View Instagram Proof
                 </a>
               </div>
             </div>
@@ -187,7 +189,7 @@ export function SocialProofSection() {
           {socialProofPosts.map((post) => (
             <article key={post.label} className="group overflow-hidden rounded-premium border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
               <div className="relative">
-                <img src={post.image} alt={post.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" />
+                <img src={post.image} alt={post.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" width="700" height="700" />
                 <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-xs font-bold text-raga-pine shadow-card">
                   <Star size={13} className="text-raga-gold" aria-hidden="true" />
                   Placeholder

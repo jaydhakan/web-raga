@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, Headphones, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react';
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
 import { getGeneralTripPlanningWhatsAppUrl } from '@/utils/whatsapp';
@@ -10,6 +10,9 @@ export function HeroSection() {
         src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80"
         alt="Scenic international holiday route at sunrise"
         className="absolute inset-0 h-full w-full object-cover opacity-75 saturate-[0.92]"
+        width="2200"
+        height="1467"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.94)_0%,rgba(17,23,20,0.72)_45%,rgba(17,23,20,0.30)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,154,76,0.20),transparent_24rem)]" />
@@ -17,29 +20,43 @@ export function HeroSection() {
       <Container className="relative flex min-h-[calc(100vh-5rem)] items-center py-24">
         <div className="reveal-section max-w-4xl">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-raga-gold">
-            RAGA International holidays
+            International holidays for couples, families, and groups
           </p>
           <h1 className="mt-6 font-display text-6xl font-semibold leading-[0.9] sm:text-7xl lg:text-8xl">
-            International trips planned with taste, clarity, and care.
+            Get a clear travel plan before you book.
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/78 sm:text-xl sm:leading-9">
-            Explore Dubai, Bali, Thailand, Singapore, Malaysia, and cruise holidays with transparent
-            package variants, hotel options, and WhatsApp-first travel support.
+            RAGA International curates Dubai, Bali, Thailand, Singapore, Malaysia, and cruise holidays with
+            package variants, transparent inclusions, and WhatsApp-first planning support.
           </p>
+          <div className="mt-6 flex flex-wrap gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-white/82">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+              <ShieldCheck size={14} aria-hidden="true" /> Verified travel partner
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+              <Headphones size={14} aria-hidden="true" /> 24/7 support
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 backdrop-blur-md">
+              <Sparkles size={14} aria-hidden="true" /> Custom itineraries
+            </span>
+          </div>
           <div className="mt-9 flex flex-wrap gap-4">
             <Button href="/packages">
-              Explore packages <ArrowRight className="ml-2" size={18} aria-hidden="true" />
+              Check Package Prices <ArrowRight className="ml-2" size={18} aria-hidden="true" />
             </Button>
             <a
               href={getGeneralTripPlanningWhatsAppUrl()}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-raga-ivory/95 px-6 py-3 text-sm font-bold text-raga-pine shadow-card transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lifted"
+              className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-raga-ivory/95 px-6 py-3 text-sm font-bold text-raga-pine shadow-card transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lifted"
             >
               <MessageCircle className="mr-2" size={18} aria-hidden="true" />
-              Plan on WhatsApp
+              Plan My Trip
             </a>
           </div>
+          <p className="mt-4 text-sm font-semibold text-white/68">
+            Free consultation. Transparent inclusions before payment. Best time to book: before peak-season rooms fill up.
+          </p>
           <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/18 pt-6 text-sm font-bold text-white/76 sm:gap-4">
             <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">6</strong> curated routes</span>
             <span className="rounded-brand bg-white/8 p-3 backdrop-blur-md"><strong className="block font-display text-3xl text-white">20+</strong> price variants</span>

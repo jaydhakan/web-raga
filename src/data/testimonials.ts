@@ -7,20 +7,20 @@ export const testimonials: Testimonial[] = [
     name: 'Priya Nair',
     location: 'Kochi',
     quote:
-      'RAGA International made our Bali honeymoon feel effortless. The villa, transfers, and day tours were exactly what we asked for, and the WhatsApp support was very responsive.',
+      'We compared three Bali options before choosing the pool villa plan. The inclusions were explained clearly, and the team helped us avoid overloading the honeymoon itinerary.',
   },
   {
     id: 't-02',
     name: 'Amit Shah',
     location: 'Ahmedabad',
     quote:
-      'We booked Dubai for a family of six. The team suggested the right hotel area, avoided overpacking the itinerary, and kept the trip comfortable for our parents and kids.',
+      'For Dubai, RAGA suggested a hotel area that worked for our parents and kids. The desert safari, transfers, and Burj Khalifa timing were planned without making the trip feel rushed.',
   },
   {
     id: 't-03',
     name: 'Neha and Varun',
     location: 'Pune',
     quote:
-      'The Singapore cruise package was explained clearly with cabin options and inclusions. We knew exactly what was included before paying, which gave us confidence.',
+      'The Singapore cruise options were easy to compare. We understood the cabin difference, gratuities, and what was included before paying, which made the booking feel safe.',
   },
 ];

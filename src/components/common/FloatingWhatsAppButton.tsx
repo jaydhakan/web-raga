@@ -13,7 +13,7 @@ export function FloatingWhatsAppButton() {
       <span className="inline-flex size-9 items-center justify-center rounded-full bg-raga-gold text-raga-ink animate-soft-pulse">
         <MessageCircle size={19} aria-hidden="true" />
       </span>
-      <span className="hidden sm:inline">Plan on WhatsApp</span>
+      <span className="hidden sm:inline">Plan My Trip</span>
     </a>
   );
 }

@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-raga-ink/10 bg-raga-ivory/86 shadow-sm backdrop-blur-2xl">
       <Container className="flex h-20 items-center justify-between">
-        <NavLink to="/" className="font-display text-2xl font-bold tracking-[0.08em] text-raga-ink sm:text-3xl">
+        <NavLink to="/" className="focus-ring rounded-sm font-display text-2xl font-bold tracking-[0.08em] text-raga-ink sm:text-3xl">
           {siteConfig.name}
         </NavLink>
 
@@ -22,7 +22,7 @@ export function Navbar() {
               key={link.href}
               to={link.href}
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-sm font-extrabold transition duration-300 hover:bg-raga-ivory hover:text-raga-rust ${
+                `focus-ring rounded-full px-4 py-2 text-sm font-extrabold transition duration-300 hover:bg-raga-ivory hover:text-raga-rust ${
                   isActive ? 'bg-raga-pine text-raga-ivory shadow-card' : 'text-raga-ink/66'
                 }`
               }
@@ -34,7 +34,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Button href="/contact" variant="secondary">
-            Plan a trip
+            Get Best Price
           </Button>
         </div>
 
@@ -57,7 +57,7 @@ export function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={({ isActive }) =>
-                  `rounded-brand px-4 py-3 text-base font-extrabold transition ${
+                  `focus-ring rounded-brand px-4 py-3 text-base font-extrabold transition ${
                     isActive ? 'bg-raga-pine text-raga-ivory' : 'bg-white/55 text-raga-ink'
                   }`
                 }
