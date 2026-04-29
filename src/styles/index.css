@@ -24,6 +24,8 @@ body {
   margin: 0;
   font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background:
     radial-gradient(circle at top left, rgba(200, 154, 76, 0.14), transparent 30rem),
     radial-gradient(circle at 85% 15%, rgba(20, 56, 47, 0.08), transparent 26rem),
@@ -73,6 +75,11 @@ img {
 
   .premium-card {
     @apply rounded-premium border border-raga-ink/10 bg-raga-ivory shadow-card transition duration-300 ease-out hover:-translate-y-1.5 hover:border-raga-gold/40 hover:shadow-lifted;
+    /* Force GPU compositor layer from initial paint — prevents subpixel text
+       re-rasterization that causes perceived blurring on hover translate */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .section-shell {

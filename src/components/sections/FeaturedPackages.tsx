@@ -16,7 +16,7 @@ export function FeaturedPackages() {
             description="Handpicked routes with clear budget, standard, premium, and luxury options so you can compare comfort levels before enquiring."
           />
         </div>
-        <div className="mt-12 grid gap-7 md:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-7 md:grid-cols-3">
           {featuredPackages.map((item) => (
             <PackageCard key={item.id} item={item} />
           ))}

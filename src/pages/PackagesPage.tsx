@@ -190,7 +190,7 @@ export function PackagesPage() {
         </div>
 
         {filteredPackages.length > 0 ? (
-          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid items-stretch gap-7 md:grid-cols-2 xl:grid-cols-3">
             {filteredPackages.map((item) => (
               <PackageCard key={item.id} item={item} />
             ))}
