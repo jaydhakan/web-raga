@@ -2,7 +2,7 @@ import { siteConfig } from '@/constants/site';
 
 export const pageSeo = {
   home: {
-    title: 'International Holiday Packages',
+    title: 'Raga International',
     description:
       'Plan Dubai, Bali, Thailand, Singapore, Malaysia, and cruise holidays with Raga International. Compare package variants and enquire on WhatsApp.',
     path: '/',
