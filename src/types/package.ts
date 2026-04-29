@@ -1,4 +1,13 @@
-export type PackageCategory = 'Luxury' | 'Adventure' | 'Wellness' | 'Culture';
+export type PackageCategory = 'Beach' | 'City' | 'Cruise' | 'Family' | 'Honeymoon' | 'Luxury';
+
+export type PackageType =
+  | 'Island Escape'
+  | 'Multi-City Holiday'
+  | 'Cruise Holiday'
+  | 'City Break'
+  | 'Beach Holiday';
+
+export type PackageVariantName = 'Budget' | 'Standard' | 'Premium' | 'Luxury';
 
 export type ItineraryDay = {
   day: number;
@@ -6,21 +15,33 @@ export type ItineraryDay = {
   description: string;
 };
 
+export type PackageVariant = {
+  variantName: PackageVariantName;
+  duration: string;
+  priceLabel: string;
+  actualPrice?: number;
+  discountedPrice?: number;
+  hotelCategory: string;
+  inclusions: string[];
+  exclusions: string[];
+};
+
 export type TravelPackage = {
   id: string;
   slug: string;
   title: string;
-  location: string;
-  duration: string;
-  price: string;
+  destination: string;
+  country: string;
+  category: PackageCategory;
+  packageType: PackageType;
+  heroImage: string;
+  gallery: string[];
   shortDescription: string;
-  longDescription: string;
-  images: string[];
+  overview: string;
   highlights: string[];
   itinerary: ItineraryDay[];
-  inclusions: string[];
-  exclusions: string[];
-  availableDates: string[];
-  category: PackageCategory;
+  bestTimeToVisit: string;
+  suitableFor: string[];
+  variants: PackageVariant[];
   featured: boolean;
 };
