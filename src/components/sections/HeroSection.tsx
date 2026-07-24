@@ -1,19 +1,34 @@
 import { ArrowRight, Headphones, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react';
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
+import heroPoster from '@/assets/images/gallery/singapore-cavenagh-bridge-group.jpg';
+import heroVideo from '@/assets/videos/hero-bridge-loop.mp4';
+import { usePausedOnReducedMotion } from '@/hooks/usePausedOnReducedMotion';
 import { getGeneralTripPlanningWhatsAppUrl } from '@/utils/whatsapp';
 
 export function HeroSection() {
+  const videoRef = usePausedOnReducedMotion();
+
   return (
     <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-raga-ink text-white">
-      <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=75"
-        alt="Scenic international holiday route at sunrise"
+      <video
+        ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover opacity-75"
-        width="1600"
-        height="1067"
-        fetchPriority="high"
-      />
+        poster={heroPoster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src={heroVideo} type="video/mp4" />
+        <img
+          src={heroPoster}
+          alt="Travel group celebrating on Cavenagh Bridge in Singapore"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </video>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,23,20,0.94)_0%,rgba(17,23,20,0.72)_45%,rgba(17,23,20,0.30)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,154,76,0.20),transparent_24rem)]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-raga-linen to-transparent" />

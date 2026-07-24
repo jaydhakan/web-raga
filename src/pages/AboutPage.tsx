@@ -2,6 +2,7 @@ import { Seo } from '@/components/common/Seo';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { ContactCtaSection } from '@/components/sections/ContactCtaSection';
+import { FounderSection } from '@/components/sections/FounderSection';
 import { pageSeo } from '@/data/seo';
 
 export function AboutPage() {
@@ -28,6 +29,7 @@ export function AboutPage() {
           </div>
         </Container>
       </section>
+      <FounderSection />
       <ContactCtaSection />
     </>
   );

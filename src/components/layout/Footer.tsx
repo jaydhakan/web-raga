@@ -1,5 +1,6 @@
-import { Instagram } from 'lucide-react';
+import { Instagram, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ragaLogo from '@/assets/images/logo/raga-logo-on-dark.png';
 import { siteConfig } from '@/constants/site';
 import { navigationLinks } from '@/data/navigation';
 import { Container } from '@/components/common/Container';
@@ -9,8 +10,12 @@ export function Footer() {
     <footer className="border-t border-raga-gold/20 bg-raga-ink py-16 text-raga-linen">
       <Container className="grid gap-12 md:grid-cols-[1.35fr_1fr_1fr]">
         <div>
-          <p className="font-display text-5xl font-semibold tracking-[0.04em]">{siteConfig.name}</p>
+          <img src={ragaLogo} alt={siteConfig.name} className="h-14 w-auto sm:h-16" />
           <p className="mt-5 max-w-md text-sm leading-7 text-raga-linen/68">{siteConfig.tagline}</p>
+          <p className="mt-4 flex items-start gap-2 max-w-md text-sm leading-6 text-raga-linen/60">
+            <MapPin size={16} className="mt-0.5 shrink-0 text-raga-gold" aria-hidden="true" />
+            {siteConfig.address}
+          </p>
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.16em] text-raga-linen/60">
             <span className="rounded-full border border-raga-linen/12 px-3 py-1.5">International holidays</span>
             <span className="rounded-full border border-raga-linen/12 px-3 py-1.5">Custom groups</span>

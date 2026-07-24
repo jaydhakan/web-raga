@@ -10,6 +10,7 @@ import {
   WhyChooseSection,
 } from '@/components/sections/HomeExperienceSections';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { TrustSection } from '@/components/sections/TrustSection';
 import { pageSeo } from '@/data/seo';
 
 export function HomePage() {
@@ -17,6 +18,7 @@ export function HomePage() {
     <>
       <Seo {...pageSeo.home} />
       <HeroSection />
+      <TrustSection />
       <FeaturedPackages />
       <WhyChooseSection />
       <PopularDestinationsSection />

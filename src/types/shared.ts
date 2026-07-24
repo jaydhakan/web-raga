@@ -6,8 +6,16 @@ export type NavLink = {
 export type Testimonial = {
   id: string;
   name: string;
-  location: string;
+  reviewerMeta: string;
+  timeAgo: string;
+  rating: number;
   quote: string;
+  destination?: string;
+  translatedFrom?: string;
+  ownerReply?: {
+    author: string;
+    text: string;
+  };
 };
 
 export type FAQ = {

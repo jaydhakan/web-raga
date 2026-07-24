@@ -1,9 +1,17 @@
 import type { Config } from 'tailwindcss';
 
+// Tailwind's default opacity scale only ships multiples of 5 (5, 10, ..., 95). This codebase
+// uses finer-grained color opacity modifiers (e.g. text-raga-ink/66) throughout, which silently
+// produce no CSS without every integer step registered here.
+const fullOpacityScale = Object.fromEntries(
+  Array.from({ length: 101 }, (_, value) => [String(value), (value / 100).toString()]),
+);
+
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      opacity: fullOpacityScale,
       colors: {
         raga: {
           ink: '#111714',

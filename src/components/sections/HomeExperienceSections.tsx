@@ -14,7 +14,8 @@ import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { siteConfig } from '@/constants/site';
-import { customTripPoints, socialProofPosts, trustBadges, whyChooseItems } from '@/data/homeContent';
+import { galleryPhotos } from '@/data/gallery';
+import { customTripPoints, trustBadges, whyChooseItems } from '@/data/homeContent';
 import { travelPackages } from '@/data/packages';
 import { getGeneralTripPlanningWhatsAppUrl } from '@/utils/whatsapp';
 
@@ -152,14 +153,16 @@ export function CustomTripsCtaSection() {
 }
 
 export function SocialProofSection() {
+  const preview = galleryPhotos.slice(0, 6);
+
   return (
     <section className="section-shell bg-raga-ivory">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <SectionHeading
-            eyebrow="Instagram and social proof"
-            title="Destination highlights and traveller moments."
-            description="A look at the experiences RAGA International curates — from honeymoon villas and desert safaris to cruise decks and island tours."
+            eyebrow="Clients photos"
+            title="Real trips, real travellers."
+            description="Genuine moments from RAGA International travellers — no stock photography, just the trips we actually planned."
           />
           <div className="rounded-premium border border-raga-ink/8 bg-raga-linen p-6 shadow-card">
             <div className="flex items-start gap-4">
@@ -186,24 +189,27 @@ export function SocialProofSection() {
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {socialProofPosts.map((post) => (
-            <article key={post.label} className="group overflow-hidden rounded-premium border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
+          {preview.map((photo) => (
+            <article key={photo.id} className="group overflow-hidden rounded-premium border border-raga-ink/8 bg-raga-ivory shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lifted">
               <div className="relative">
-                <img src={post.image} alt={post.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" width="700" height="700" />
+                <img src={photo.src} alt={photo.alt} className="image-zoom aspect-square w-full object-cover" loading="lazy" width="700" height="700" />
                 <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-raga-ivory/92 px-3 py-1.5 text-xs font-bold text-raga-pine shadow-card">
                   <Star size={13} className="text-raga-gold" aria-hidden="true" />
                   Featured
                 </div>
               </div>
               <div className="p-4">
-                <p className="text-sm font-bold text-raga-pine">{post.label}</p>
-                <p className="mt-2 text-sm leading-6 text-raga-ink/62">{post.caption}</p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-raga-ink/42">
-                  {siteConfig.instagramHandle}
-                </p>
+                <p className="text-sm font-bold text-raga-pine">{photo.location}</p>
+                <p className="mt-2 text-sm leading-6 text-raga-ink/62">{photo.caption}</p>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Button href="/gallery" variant="secondary">
+            View Full Gallery
+          </Button>
         </div>
       </Container>
     </section>

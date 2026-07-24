@@ -9,4 +9,8 @@ export const siteConfig = {
   whatsappUrl: 'https://wa.me/919409722614',
   instagramUrl: 'https://www.instagram.com/raga_international_/',
   instagramHandle: '@raga_international_',
+  address: '20-25, 102, New Jagnath Rd, Jagnath Plot, Rajkot, Gujarat 360001, India',
+  // Search-by-name-and-address link — swap for the direct Google Business Profile URL if you have it.
+  googleReviewsUrl:
+    'https://www.google.com/maps/search/?api=1&query=RAGA+INTERNATIONAL+20-25+102+New+Jagnath+Rd+Jagnath+Plot+Rajkot+Gujarat+360001',
 };

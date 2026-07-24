@@ -19,6 +19,24 @@ export const pageSeo = {
       'Learn how Raga International helps travellers choose routes, hotel tiers, transfers, and package variants with clear expert guidance.',
     path: '/about',
   },
+  gallery: {
+    title: 'Traveller Photo Gallery',
+    description:
+      'Real trip photos from Raga International travellers — Singapore family holidays, group tours, and cruise departures.',
+    path: '/gallery',
+  },
+  reviews: {
+    title: 'Google Reviews',
+    description:
+      'Real Google reviews from Raga International travellers who booked Dubai, Bali, Thailand, Singapore, and cruise holidays.',
+    path: '/reviews',
+  },
+  faq: {
+    title: 'Frequently Asked Questions',
+    description:
+      'Answers on customization, pricing, hidden charges, visa assistance, and trip support from Raga International.',
+    path: '/faq',
+  },
   contact: {
     title: 'Contact Raga International',
     description:

@@ -1,4 +1,4 @@
-import { CheckCircle2, Mail, MessageCircle, Phone } from 'lucide-react';
+import { CheckCircle2, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { type FormEvent, useMemo, useState } from 'react';
 import { Seo } from '@/components/common/Seo';
 import { Container } from '@/components/common/Container';
@@ -72,6 +72,9 @@ export function ContactPage() {
             <a className="focus-ring flex items-center gap-3 rounded-sm text-raga-ink/76 transition hover:text-raga-rust" href={getGeneralTripPlanningWhatsAppUrl()} target="_blank" rel="noreferrer">
               <MessageCircle size={18} aria-hidden="true" /> Enquire on WhatsApp
             </a>
+            <p className="flex items-start gap-3 text-raga-ink/76">
+              <MapPin size={18} className="mt-0.5 shrink-0" aria-hidden="true" /> {siteConfig.address}
+            </p>
           </div>
         </div>
 

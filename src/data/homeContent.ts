@@ -13,13 +13,6 @@ export type WhyChooseItem = {
   icon: HomeIconKey;
 };
 
-export type SocialProofPost = {
-  label: string;
-  caption: string;
-  image: string;
-  alt: string;
-};
-
 export type CustomTripPoint = {
   label: string;
   icon: HomeIconKey;
@@ -60,43 +53,4 @@ export const customTripPoints: CustomTripPoint[] = [
   { label: 'Private groups and families', icon: 'users' },
   { label: 'Honeymoon and celebration setups', icon: 'sparkles' },
   { label: 'Quote discussion on WhatsApp', icon: 'message' },
-];
-
-export const socialProofPosts: SocialProofPost[] = [
-  {
-    label: 'Bali honeymoon villas',
-    caption: 'Private pool villas, floating breakfasts, and temple ceremonies — curated for couples who want the Bali experience done right.',
-    image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80',
-    alt: 'Private pool villa in Bali prepared for honeymoon travellers',
-  },
-  {
-    label: 'Dubai skyline breaks',
-    caption: 'Burj Khalifa at sunset, desert safaris, Dubai Mall, and Gold Souk — family-friendly days with smooth transfers throughout.',
-    image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80',
-    alt: 'Dubai skyline at golden hour for family holiday inspiration',
-  },
-  {
-    label: 'Thailand island days',
-    caption: 'Coral Island boat trips, Bangkok temples, Pattaya beach time, and authentic street food stops — value-packed and well-paced.',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
-    alt: 'Clear blue Thailand beach for Phuket and Krabi island holidays',
-  },
-  {
-    label: 'Singapore cruise departures',
-    caption: 'Marina Bay Sands, Universal Studios, and world-class cruise cabins — premium city breaks with seamless onward connections.',
-    image: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80',
-    alt: 'Cruise ship at sea for Singapore cruise holiday',
-  },
-  {
-    label: 'Malaysia group holidays',
-    caption: 'Genting Highlands, Petronas Twin Towers, and Kuala Lumpur street food — group-friendly logistics handled end to end.',
-    image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=80',
-    alt: 'Kuala Lumpur skyline for Singapore Malaysia group holiday planning',
-  },
-  {
-    label: 'Family travel support',
-    caption: 'Airport pickups, child-friendly hotels, flexible itineraries, and WhatsApp check-ins — travel with family, stress-free.',
-    image: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=900&q=80',
-    alt: 'Family travel planning with RAGA International support',
-  },
 ];

@@ -4,6 +4,9 @@ import type { NavLink } from '@/types/shared';
 export const navigationLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'Packages', href: '/packages' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Reviews', href: '/reviews' },
   { label: 'About', href: '/about' },
+  { label: 'FAQs', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ];

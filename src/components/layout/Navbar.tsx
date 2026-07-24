@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import ragaLogo from '@/assets/images/logo/raga-logo-on-light.png';
 import { navigationLinks } from '@/data/navigation';
 import { siteConfig } from '@/constants/site';
 import { Button } from '@/components/common/Button';
@@ -12,8 +13,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-raga-ink/10 bg-raga-ivory/92 shadow-sm backdrop-blur-md">
       <Container className="flex h-20 items-center justify-between">
-        <NavLink to="/" className="focus-ring rounded-sm font-display text-2xl font-bold tracking-[0.08em] text-raga-ink sm:text-3xl">
-          {siteConfig.name}
+        <NavLink to="/" className="focus-ring rounded-sm">
+          <img src={ragaLogo} alt={siteConfig.name} className="h-9 w-auto sm:h-11" />
         </NavLink>
 
         <nav className="hidden items-center gap-2 rounded-full border border-raga-ink/8 bg-white/45 p-1.5 shadow-sm md:flex">
