@@ -1,8 +1,8 @@
 import { ArrowRight, Headphones, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react';
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/Container';
-import heroPoster from '@/assets/images/gallery/singapore-cavenagh-bridge-group.jpg';
-import heroVideo from '@/assets/videos/hero-bridge-loop.mp4';
+import heroPoster from '@/assets/images/gallery/hero-anderson-bridge-poster.jpg';
+import heroVideo from '@/assets/videos/hero-anderson-bridge-loop.mp4';
 import { usePausedOnReducedMotion } from '@/hooks/usePausedOnReducedMotion';
 import { getGeneralTripPlanningWhatsAppUrl } from '@/utils/whatsapp';
 
@@ -25,7 +25,7 @@ export function HeroSection() {
         <source src={heroVideo} type="video/mp4" />
         <img
           src={heroPoster}
-          alt="Travel group celebrating on Cavenagh Bridge in Singapore"
+          alt="Travel group celebrating on Anderson Bridge in Singapore"
           className="absolute inset-0 h-full w-full object-cover"
         />
       </video>

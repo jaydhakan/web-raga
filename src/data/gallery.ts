@@ -19,8 +19,8 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     id: 'gallery-01',
     src: cavenaghBridge,
-    alt: 'Travel group celebrating on the historic Cavenagh Bridge in Singapore',
-    caption: 'A full group celebration on Cavenagh Bridge, right by the Singapore River.',
+    alt: 'Travel group celebrating on the historic Anderson Bridge in Singapore',
+    caption: 'A full group celebration on Anderson Bridge, right by the Singapore River.',
     location: 'Singapore',
   },
   {
